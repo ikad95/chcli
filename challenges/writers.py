@@ -43,7 +43,10 @@ def write_contests(contests, contest_type):
     click.secho("%-3s" % str(index+1), nl=False, bold=True)
     click.secho("  %-50s" %
                 contest_name, nl=False, fg=colors().CONTEST_NAME, bold=True)
-    click.secho("    %-20s" % time_diff_string, nl=False, fg=colors().TIME_TO_START, bold=True)
+    if 'start' in contest:
+      click.secho("    %-20s" % time_diff_string, nl=False, fg=colors().TIME_TO_START, bold=True)
+    else:
+      click.secho("    %-20s" % time_diff_string, nl=False, fg=colors().TIME_LEFT, bold=True)
     click.secho("    %-11s" %
                  str(contest["duration"]), nl=False, bold=True)
     click.secho("    %-15s" % contest["host_name"], fg=colors().HOST, bold=True)
