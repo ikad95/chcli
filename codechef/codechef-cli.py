@@ -157,10 +157,11 @@ browser.open(login_url)
 
 form = browser.get_form(id='new-login-form')
 
-
-#form['name'].value = raw_input("Please enter username : ") #"moulik_nitd"
-#form['pass'].value = getpass.getpass("Please enter password : ") #"wWZQebK5Ap"
-#browser.submit_form(form)
+x = raw_input("Login? (y/n)")
+if(x=='y'):
+	form['name'].value = raw_input("Please enter username : ")
+	form['pass'].value = getpass.getpass("Please enter password : ")
+	browser.submit_form(form)
 #Logged in
 
 user = browser.find(class_='right')
