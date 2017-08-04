@@ -21,6 +21,7 @@ using namespace std;
 inline bool EQ(double a, double b) { return fabs(a-b) < 1e-9; }
 const int INF = 1<<29;
 typedef long long ll;
+inline void inp(auto &n){n=0; char x; while((x=getchar_unlocked())>='0' && x <= '9') n = 10*n + x - '0'; }
 inline int two(int n) { return 1 << n; }
 inline int test(int n, int b) { return (n>>b)&1; }
 inline void set_bit(int & n, int b) { n |= two(b); }
@@ -32,5 +33,10 @@ template<class T> void chmin(T & a, const T & b) { a = min(a, b); }
 /////////////////////////////////////////////////////////////////////
 int main()
 {
+	long n=12;
+	int a=11;
+	inp(n);
+	inp(a);
+	printf("\n%ld\n%d\n",n,a);
     return 0;
 }
